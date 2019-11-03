@@ -1,0 +1,17 @@
+function findSum(v::Vector, s)
+    v = sort(v)
+    i = 1
+    j = length(v)
+    while i < j
+        if v[i] + v[j] == s
+            println("(",v[i],",",v[j],")")
+            i += 1
+        elseif v[i] + v[j] < s
+            i += 1
+        else
+            j -= 1
+        end
+    end
+end
+
+findSum([1, 3, 8, 12, 7, 11, 9, 4, 2, 10, 5], 12)
